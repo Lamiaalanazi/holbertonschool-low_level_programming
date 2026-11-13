@@ -15,13 +15,26 @@ int main(void)
 	printf("3) Multiply\n");
 	printf("4) Divide\n");
 	printf("0) Quit\n");
-	printf("Choice: ");
 
-	if (scanf("%d", &choice) != 1)
-		return (1);
-	if (choice == 0)
-		printf("Bye!\n");
+	while (1)
+	{
+		printf("Choice: ");
+
+		if (scanf("%d", &choice) != 1)
+			return (1);
+
+		if (choice == 0)
+		{
+			printf("Bye!\n");
+			break;
+		}
+
+		if (choice < 0 || choice > 4)
+		{
+			printf("Invalid choice\n");
+			continue;
+		}
+	}
 
 	return (0);
-
 }
